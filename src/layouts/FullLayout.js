@@ -3,14 +3,15 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import { Container } from "reactstrap";
-
+import { useSidebar } from "../context/SidebarContext";
 const FullLayout = () => {
   // const [toggleSidebar,setToggleSidebar] = useState()
+  const { isSidebarOpen } = useSidebar();
   return (
     <main>
       <div className="pageWrapper d-lg-flex">
         {/********Sidebar**********/}
-        <aside className="sidebarArea shadow" id="sidebarArea">
+        <aside className={`sidebarArea shadow ${isSidebarOpen ? 'd-none' : ''}`} id="sidebarArea">
           <Sidebar />
         </aside>
         {/********Content Area**********/}

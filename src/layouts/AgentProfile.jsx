@@ -1,19 +1,26 @@
-import { Container,Row,Col} from "reactstrap"
-const AgentProfile=() =>{
-    return(
-        <Container>
+import { lazy } from "react"
+import { Container, Row, Col } from "reactstrap"
+const UserDetails = lazy(() => import("../components/Profile/UserDetails.jsx"))
+const Conversation = lazy(() => import("../components/Profile/Conversation.jsx"))
+const AgentCalls = lazy(() => import("../components/Profile/AgentCalls.jsx"))
+
+const AgentProfile = () => {
+    return (
+        // <Container>
+        <div>
             <Row>
-                <Col>
-                    <h1>Agent Profile</h1>
+                <Col lg='4' md='6' xs='12' className="px-0">
+                    <UserDetails />
                 </Col>
-                <Col>
-                    <h1>Agent Profile</h1>
+                <Col lg='4' md='6' xs='12' className="px-0">
+                    <Conversation />
                 </Col>
-                <Col>
-                    <h1>Agent Profile</h1>
+                <Col lg='4' md='6' xs='12' className="px-0">
+                    <AgentCalls />
                 </Col>
             </Row>
-        </Container> 
+        </div>
+        // </Container> 
     )
 }
 export default AgentProfile

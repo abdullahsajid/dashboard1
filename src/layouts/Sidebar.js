@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 const navigation = [
   {
     title: "Dashboard",
-    href: "#",
+    href: "/bi/starter",
     icon: "bi bi-speedometer2",
   },
   {
